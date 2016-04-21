@@ -1,13 +1,13 @@
-#include "Item.h"
+#include "InventoryItem.h"
 
 
 // Constructor/Destructor ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Item::Item(string new_name)
+InventoryItem::InventoryItem(string new_name)
 {
-  this->name = new_name;
+	this->name = new_name;
 }
 
-Item::~Item()
+InventoryItem::~InventoryItem()
 {
 }

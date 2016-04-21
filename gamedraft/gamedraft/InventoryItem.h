@@ -1,17 +1,15 @@
 #pragma once
 
-#include <string>
-
-using namespace std;
+#include "Item.h"
 
 
-class Item
+class InventoryItem : public Item
 {
 public:
 	// Constructor/Destructor ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	Item(string new_name="\0");
-	~Item();
+	InventoryItem(string new_name="\0");
+	~InventoryItem();
 
 private:
 	string name;
