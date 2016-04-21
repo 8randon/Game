@@ -12,3 +12,15 @@ Item::Item(string new_name, string new_destription)
 Item::~Item()
 {
 }
+
+// Accessors -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+string Item::get_name() const
+{
+	return this->name;
+}
+
+string Item::get_description() const
+{
+	return this->description;
+}

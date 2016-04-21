@@ -9,6 +9,30 @@ InventoryItem_Hold::InventoryItem_Hold(float new_durability, Hold_Buff_Type new_
 	this->buff = new_buff;
 }
 
-InventoryItem_Hold::InventoryItem_Hold()
+InventoryItem_Hold::~InventoryItem_Hold()
+{
+}
+
+// Accessors -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+float InventoryItem_Hold::get_modifier() const
+{
+	return this->modifier;
+}
+
+Hold_Buff_Type InventoryItem_Hold::get_buff() const
+{
+	return this->buff;
+}
+
+// Public Member Functions -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//TODO write definition once Character class has been created
+void InventoryItem_Hold::equip()
+{
+}
+
+//TODO write definition once Character class has been created
+void InventoryItem_Hold::dequip()
 {
 }

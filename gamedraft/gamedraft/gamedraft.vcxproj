@@ -150,6 +150,7 @@
     <ClCompile Include="InventoryItem_Consume.cpp" />
     <ClCompile Include="InventoryItem_Hold.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="KeyItem.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mmenue.cpp" />
     <ClCompile Include="splach.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="InventoryItem_Hold.h" />
     <ClInclude Include="InventoryItem_Consume.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="KeyItem.h" />
     <ClInclude Include="mmenue.h" />
     <ClInclude Include="splash.h" />
     <ClInclude Include="stdfx.h" />

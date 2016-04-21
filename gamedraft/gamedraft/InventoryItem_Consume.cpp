@@ -13,6 +13,18 @@ InventoryItem_Consume::~InventoryItem_Consume()
 {
 }
 
+// Accessors -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+int InventoryItem_Consume::get_modifier() const
+{
+	return this->modifier;
+}
+
+consume_buff_type InventoryItem_Consume::get_buff() const
+{
+	return this->buff;
+}
+
 // Public Member Functions ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //TODO write definition once Character class is defined

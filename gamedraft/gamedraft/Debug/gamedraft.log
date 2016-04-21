@@ -1,6 +1,2 @@
-﻿  Item.cpp
-  InventoryItem_Hold.cpp
-  InventoryItem_Consume.cpp
-  InventoryItem.cpp
-  Generating Code...
+﻿  InventoryItem_Hold.cpp
   gamedraft.vcxproj -> C:\Users\Jensen\Documents\SourceTree\gamedraft\Debug\gamedraft.exe
