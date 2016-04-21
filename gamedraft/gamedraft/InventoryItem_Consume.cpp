@@ -3,7 +3,7 @@
 
 // Constructor/Destructor ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-InventoryItem_Consume::InventoryItem_Consume(int new_modifier, Consume_Buff_Type new_buff, string new_name) : InventoryItem(new_name)
+InventoryItem_Consume::InventoryItem_Consume(int new_modifier, Consume_Buff_Type new_buff, string new_name, string new_description) : InventoryItem(new_name, new_description)
 {
 	this->modifier = new_modifier;
 	this->buff = new_buff;

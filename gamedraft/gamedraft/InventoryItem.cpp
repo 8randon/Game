@@ -3,9 +3,8 @@
 
 // Constructor/Destructor ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-InventoryItem::InventoryItem(string new_name)
+InventoryItem::InventoryItem(string new_name, string new_description) : Item(new_name, new_description)
 {
-	this->name = new_name;
 }
 
 InventoryItem::~InventoryItem()
