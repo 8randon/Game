@@ -1,2 +1,6 @@
-﻿  main.cpp
-  gamedraft.vcxproj -> C:\Users\Ankous\Documents\Visual Studio 2015\Projects\gamedraft\Debug\gamedraft.exe
+﻿  Item.cpp
+  InventoryItem_Hold.cpp
+  InventoryItem_Consume.cpp
+  InventoryItem.cpp
+  Generating Code...
+  gamedraft.vcxproj -> C:\Users\Jensen\Documents\SourceTree\gamedraft\Debug\gamedraft.exe
