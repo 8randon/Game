@@ -27,12 +27,12 @@ Hold_Buff_Type InventoryItem_Hold::get_buff() const
 
 // Public Member Functions -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//TODO write definition once Character class has been created
+//TODO write definition and add the reference to character once Character class is defined
 void InventoryItem_Hold::equip()
 {
 }
 
-//TODO write definition once Character class has been created
+//TODO write definition and add the reference to character once Character class is defined
 void InventoryItem_Hold::dequip()
 {
 }

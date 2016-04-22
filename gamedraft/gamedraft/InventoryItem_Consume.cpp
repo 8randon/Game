@@ -27,7 +27,7 @@ consume_buff_type InventoryItem_Consume::get_buff() const
 
 // Public Member Functions ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//TODO write definition once Character class is defined
-void InventoryItem_Consume::use()
+//TODO write definition and add the reference to character once Character class is defined
+void InventoryItem_Consume::consume()
 {
 }
