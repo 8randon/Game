@@ -15,8 +15,6 @@
 
 #include "Item.h"
 
-extern class Chracter;
-
 class InventoryItem : public Item
 {
 public:

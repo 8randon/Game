@@ -1,7 +1,6 @@
-﻿  InventoryItem.cpp
-c:\users\jlrei\documents\sourcetree\game\gamedraft\gamedraft\inventoryitem.h(18): warning C4091: 'extern ': ignored on left of 'Chracter' when no variable is declared
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  InventoryItem_Hold.cpp
+﻿cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
+  InventoryItem.cpp
   InventoryItem_Consume.cpp
+  InventoryItem_Hold.cpp
+  Generating Code...
   gamedraft.vcxproj -> C:\Users\jlrei\Documents\SourceTree\Game\gamedraft\Debug\gamedraft.exe
