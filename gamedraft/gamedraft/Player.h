@@ -11,6 +11,8 @@ public:
 		cout << "Player" << endl;
 	}
 
+	Player(Player &copy);
+
 	//accessors
 	int getxp() { return xp; }
 

@@ -156,6 +156,7 @@
     <ClCompile Include="mmenue.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="splach.cpp" />
+    <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h" />
@@ -170,6 +171,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="splash.h" />
     <ClInclude Include="stdfx.h" />
+    <ClInclude Include="User.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
