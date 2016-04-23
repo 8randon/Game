@@ -1,5 +1,8 @@
 #pragma once
 #include "Character.h"
+#include "InventoryItem_Consume.h"
+#include "InventoryItem_Hold.h"
+#include "KeyItem.h"
 
 class Player:public Character
 {
@@ -21,5 +24,6 @@ protected:
 
 private:
 	string password;
-
+	InventoryItem inventory[10];
+	KeyItem keypouch[5];
 };

@@ -38,6 +38,6 @@ protected:
 
 	int x;
 	int y;
-	int h;
-	int w;
+	int h = 20;
+	int w = 20;
 };
