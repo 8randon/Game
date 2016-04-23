@@ -1,6 +1,8 @@
-﻿cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
-  InventoryItem.cpp
+﻿  InventoryItem_Hold.cpp
   InventoryItem_Consume.cpp
-  InventoryItem_Hold.cpp
+  InventoryItem.cpp
   Generating Code...
+  Skipping... (no relevant changes detected)
+  Player.cpp
+  Character.cpp
   gamedraft.vcxproj -> C:\Users\jlrei\Documents\SourceTree\Game\gamedraft\Debug\gamedraft.exe

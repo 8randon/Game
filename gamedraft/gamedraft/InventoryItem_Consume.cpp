@@ -22,7 +22,11 @@ int InventoryItem_Consume::get_modifier() const
 
 // Public Member Functions ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//TODO write definition and add the reference to character once Character class is defined
-void InventoryItem_Consume::consume()
+void InventoryItem_Consume::consume(Character &character)
 {
+	switch(this->buff)
+	{
+	case HEALTH: character.set_hp(character.gethp()+(this->modifier));
+		break;
+	}
 }

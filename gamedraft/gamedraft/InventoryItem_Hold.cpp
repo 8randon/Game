@@ -23,11 +23,20 @@ float InventoryItem_Hold::get_modifier() const
 // Public Member Functions -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //TODO write definition and add the reference to character once Character class is defined
-void InventoryItem_Hold::equip()
+void InventoryItem_Hold::equip(Character &character)
 {
+	switch(this->buff)
+	{
+	case ARMOR: 
+		break;
+	case ATTACK_DAMAGE:
+		break;
+	case HEALTH:
+		break;
+	}
 }
 
 //TODO write definition and add the reference to character once Character class is defined
-void InventoryItem_Hold::dequip()
+void InventoryItem_Hold::dequip(Character &character)
 {
 }

@@ -29,12 +29,11 @@ public:
 
 	// Public Member Functions ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
-	//TODO write definition and add the reference to character once Character class is defined
 	//- Applies the item's buff or regeneration to the character in possession's attribute
 	//- Accepts a reference to the character, passing the modified attribute values back through once the function call is complete
 	//NOTE: Does not destroy the object after modifying the character attributes. That must be done externally
 	//PRECONDITION: The character must have the attribute that will be modified as a member, this will not be checked within the function
-	void consume(); //TODO Add a reference to the character class once it is created
+	void consume(Character &character);
 
 private:
 	int modifier;

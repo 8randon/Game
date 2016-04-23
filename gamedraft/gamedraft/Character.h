@@ -22,6 +22,10 @@ public:
 	int getxpos() { return x; }
 	int getypos() { return y; }
 
+	// Mutators - Added by Jensen Reitz
+	void set_hp(const int new_hp) { this->hp = new_hp; }
+	void set_str(const int new_str) { this->str = new_str; }
+
 	//member functions
 	virtual bool canMove(int temp);
 	void moveUp();
