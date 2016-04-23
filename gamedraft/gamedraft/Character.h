@@ -11,7 +11,7 @@ class Character
 {
 public:
 	//constructor
-	Character(int hp = 0, int str = 0, int armor=0, int x = 0, int y = 0, int h = 0, int w = 0);
+	Character(int mhp = 0, int hp = 0, int str = 0, int armor=0, int x = 0, int y = 0, int h = 0, int w = 0);
 
 	//destructor
 	~Character();
@@ -37,6 +37,7 @@ public:
 
 
 protected:
+	int mhp;	//max health
 	int hp; 
 	int str;
 	int armor;
