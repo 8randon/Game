@@ -27,11 +27,11 @@ void InventoryItem_Hold::equip(Character &character)
 {
 	switch(this->buff)
 	{
-	case ARMOR: 
+	case ARMOR: character.set_armor(character.getarmor()+(this->modifier));
 		break;
-	case ATTACK_DAMAGE:
+	case ATTACK_DAMAGE: character.set_str(character.getstr()+(this->modifier));
 		break;
-	case HEALTH:
+	case HEALTH: character.set_hp(character.gethp()+(this->modifier));
 		break;
 	}
 }
@@ -39,4 +39,13 @@ void InventoryItem_Hold::equip(Character &character)
 //TODO write definition and add the reference to character once Character class is defined
 void InventoryItem_Hold::dequip(Character &character)
 {
+	switch(this->buff)
+	{
+	case ARMOR: character.set_armor(character.getarmor()-(this->modifier));
+		break;
+	case ATTACK_DAMAGE: character.set_str(character.getstr()-(this->modifier));
+		break;
+	case HEALTH: character.set_hp(character.gethp()-(this->modifier));
+		break;
+	}
 }
