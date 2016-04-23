@@ -20,11 +20,6 @@ int InventoryItem_Consume::get_modifier() const
 	return this->modifier;
 }
 
-consume_buff_type InventoryItem_Consume::get_buff() const
-{
-	return this->buff;
-}
-
 // Public Member Functions ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //TODO write definition and add the reference to character once Character class is defined

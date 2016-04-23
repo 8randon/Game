@@ -23,5 +23,4 @@ public:
 	InventoryItem(string new_name="\0", string new_description="\0");
 	virtual ~InventoryItem();
 
-private:
 };

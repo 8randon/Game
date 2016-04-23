@@ -28,6 +28,6 @@ public:
 	string get_name() const;
 	string get_description() const;
 
-private:
+protected:
 	string name, description;
 };

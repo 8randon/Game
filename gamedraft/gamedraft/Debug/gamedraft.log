@@ -1,2 +1,7 @@
-﻿  InventoryItem_Hold.cpp
-  gamedraft.vcxproj -> C:\Users\Jensen\Documents\SourceTree\gamedraft\Debug\gamedraft.exe
+﻿  InventoryItem.cpp
+c:\users\jlrei\documents\sourcetree\game\gamedraft\gamedraft\inventoryitem.h(18): warning C4091: 'extern ': ignored on left of 'Chracter' when no variable is declared
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  InventoryItem_Hold.cpp
+  InventoryItem_Consume.cpp
+  gamedraft.vcxproj -> C:\Users\jlrei\Documents\SourceTree\Game\gamedraft\Debug\gamedraft.exe

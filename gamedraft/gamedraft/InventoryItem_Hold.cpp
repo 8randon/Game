@@ -20,11 +20,6 @@ float InventoryItem_Hold::get_modifier() const
 	return this->modifier;
 }
 
-Hold_Buff_Type InventoryItem_Hold::get_buff() const
-{
-	return this->buff;
-}
-
 // Public Member Functions -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //TODO write definition and add the reference to character once Character class is defined
