@@ -146,12 +146,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="InventoryItem.cpp" />
+    <ClCompile Include="InventoryItem_Consume.cpp" />
+    <ClCompile Include="InventoryItem_Hold.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="KeyItem.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mmenue.cpp" />
     <ClCompile Include="splach.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h" />
+    <ClInclude Include="InventoryItem.h" />
+    <ClInclude Include="InventoryItem_Hold.h" />
+    <ClInclude Include="InventoryItem_Consume.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="KeyItem.h" />
     <ClInclude Include="mmenue.h" />
     <ClInclude Include="splash.h" />
     <ClInclude Include="stdfx.h" />
