@@ -1,8 +1,10 @@
-﻿  InventoryItem_Hold.cpp
+﻿  Character.cpp
+  Generating Code...
+c:\users\jlrei\documents\sourcetree\game\gamedraft\gamedraft\character.cpp(33): warning C4715: 'Character::canMove': not all control paths return a value
+  Compiling...
+  Player.cpp
+  InventoryItem_Hold.cpp
   InventoryItem_Consume.cpp
   InventoryItem.cpp
   Generating Code...
-  Skipping... (no relevant changes detected)
-  Player.cpp
-  Character.cpp
   gamedraft.vcxproj -> C:\Users\jlrei\Documents\SourceTree\Game\gamedraft\Debug\gamedraft.exe

@@ -1,6 +1,6 @@
 #include "Character.h"
 
-Character::Character(int hp, int str, int x, int y, int h, int w)
+Character::Character(int hp, int str,int armor, int x, int y, int h, int w)
 {
 	cout << "Character Constructor" << endl;
 }
