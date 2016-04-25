@@ -36,5 +36,5 @@ void User::save(int updatedLevel, Player &const updatedPlayer)
 	this->saved_player = updatedPlayer_Copy;
 
 	//Delete the old saved_player
-	delete &temp;
+	temp.~Player();
 }
