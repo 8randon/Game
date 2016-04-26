@@ -1,5 +1,32 @@
 #include "Player.h"
 
+//hold/consume (h/c), name, buff (int), modifier
+string Player::loadInventory()
+{
+	string inventoryData;
+	InventoryItem *pCurr = this->inventory;
+
+	while(pCurr++)
+	{
+		inventoryData += ",";
+
+		if(pCurr->get_type_item()=='h')
+		{
+			inventoryData += "h" + ',' + pCurr->get_name();
+			inventoryData += "," + dynamic_cast<InventoryItem_Hold *>(pCurr)->get_buff();
+			inventoryData += "," + dynamic_cast<InventoryItem_Hold *>(pCurr)->get_modifier();
+		}
+		else if(pCurr->get_type_item()=='c')
+		{
+			inventoryData += "c" + ',' + pCurr->get_name();
+			inventoryData += "," + dynamic_cast<InventoryItem_Consume *>(pCurr)->get_buff();
+			inventoryData += "," + dynamic_cast<InventoryItem_Consume *>(pCurr)->get_modifier();
+		}
+	}
+
+	return inventoryData;
+}
+
 void Player::levelup()
 {
 	while (xp > 0)

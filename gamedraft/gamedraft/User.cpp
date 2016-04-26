@@ -109,8 +109,8 @@ int User::encode(int saved_level, Player &saved_player)
 
 	//Save data in order of:
 	//username, password, current level, max health, current health, strength, armor, inventory
-	string userData = this->username + "," + this->password + "," + /* (char *)saved_player.getmhp() + "," */ (char *)saved_player.gethp() + "," + 
-		(char *)saved_player.getstr() + "," + (char *)saved_player.getarmor() /* + "," + saved_player.get_inventory() */;
+	string userData = this->username + "," + this->password + "," + (char *)saved_player.getmhp() + "," + (char *)saved_player.gethp() + "," + 
+		(char *)saved_player.getstr() + "," + (char *)saved_player.getarmor() + saved_player.loadInventory();
 
 	//Generate an encryption key for encoding the saved data
 	int encryptKey = rand()%9 + 1;
@@ -252,7 +252,7 @@ Player User::parsePlayerInfo(string const &str, size_t start)
 	} while(a>0); //While there is still data to read (Will loop back to the beginning of str once read all the way through)
 
 	//Set the initial player attribute values
-	//newPlayer->set_mhp(std::stoi(strings.at(0)));
+	newPlayer->set_mhp(std::stoi(strings.at(0)));
 	newPlayer->set_hp(std::stoi(strings.at(1)));
 	newPlayer->set_str(std::stoi(strings.at(2)));
 	newPlayer->set_armor(std::stoi(strings.at(3)));
@@ -265,9 +265,9 @@ Player User::parsePlayerInfo(string const &str, size_t start)
 
 		//Check for if the item is consumable or equipable
 		if(strings.at(i)=="h")
-			new_item = new InventoryItem_Hold(0, stoi(strings.at(i+2)), stof(strings.at(i+3)), strings.at(i+1), "\n");
+			new_item = new InventoryItem_Hold(stoi(strings.at(i+2)), stoi(strings.at(i+3)), 'h', strings.at(i+1), "\n");
 		else
-			new_item = new InventoryItem_Consume(stoi(strings.at(i+2)), stoi(strings.at(i+3)), strings.at(i+1), "\n");
+			new_item = new InventoryItem_Consume(stoi(strings.at(i+2)), stoi(strings.at(i+3)), 'c', strings.at(i+1), "\n");
 
 		//newPlayer->addInventory(*new_item);
 	}

@@ -20,19 +20,16 @@ public:
 	} Consume_Buff_Type;
 
 
-	InventoryItem_Consume(int new_modifier=0, int new_buff=0, string new_name="\0", string new_description="\0");
+	InventoryItem_Consume(int new_modifier=0, int new_buff=0, char new_type_item='c', string new_name="\0", string new_description="\0");
 	~InventoryItem_Consume();
 
 	// Accessors ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	int get_modifier() const;
+	int get_buff() const;
 
 	// Public Member Functions ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
-	//- Applies the item's buff or regeneration to the character in possession's attribute
-	//- Accepts a reference to the character, passing the modified attribute values back through once the function call is complete
-	//NOTE: Does not destroy the object after modifying the character attributes. That must be done externally
-	//PRECONDITION: The character must have the attribute that will be modified as a member, this will not be checked within the function
 	void consume(Character &character);
 
 private:

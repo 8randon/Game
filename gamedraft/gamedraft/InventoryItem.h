@@ -19,6 +19,13 @@
 class InventoryItem : public Item
 {
 public:
-	InventoryItem(string new_name="\0", string new_description="\0");
+	InventoryItem(char new_type_item='\0', string new_name="\0", string new_description="\0");
 	virtual ~InventoryItem();
+
+	//Accessors
+
+	char get_type_item() const;
+
+protected:
+	char type_item; //h='h' for holdable, 'c' for consumable
 };

@@ -19,26 +19,20 @@ public:
 		NONE, ARMOR, ATTACK_DAMAGE, HEALTH
 	} Hold_Buff_Type;
 
-	InventoryItem_Hold(float new_durability=0, int new_buff=0, float new_modifier=0, string new_name="\0", string new_description="\0");
+	InventoryItem_Hold(int new_buff=0, int new_modifier=0, char new_type_item='h', string new_name="\0", string new_description="\0");
 	~InventoryItem_Hold();
 
 	// Accessors ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	float get_modifier() const;
+	int get_modifier() const;
+	int get_buff() const;
 
 	// Public Member Functions -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	//- Assigns attribute buffs to the character "holding" the item
-	//- Accepts a reference to the Character, passing the modified values back through once the function call is complete
-	//PRECONDITION: The character must have the attribute that will be modified as a member, this will not be checked within the function
 	void equip(Character &character);
-
-	//- Takes away the attribute buffs that would be assigned when the item was equipped
-	//- Accepts a reference to the Character, passing the modified values back through once the function call is complete
-	//PRECONDITION: The character must have the attribute that will be modified as a member, this will not be checked within the function
-	void dequip(Character &character); //TODO add reference to character once the class has been created
+	void dequip(Character &character);
 
 private:
-	float modifier, durability;
+	int modifier;
 	Hold_Buff_Type buff;
 };

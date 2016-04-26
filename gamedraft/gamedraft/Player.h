@@ -7,21 +7,18 @@
 class Player:public Character
 {
 public:
-	Player(int hp = 10, int str = 5, int x = 0, int y = 0, int h = 0, int w = 0) : Character(hp, str, x, y, h, w){
+	Player(int hp = 10, int str = 5, int armor=0, int x = 0, int y = 0, int h = 0, int w = 0) : Character(hp, hp, str, armor, x, y, h, w){
 		cout << "Player" << endl;
 	}
 
-<<<<<<< HEAD
 	Player(Player const &copy) {}
-=======
-	Player(Player &copy) {}
->>>>>>> master
 
 	~Player() {}
 
 	//accessors
 	int getxp() { return xp; }
 
+	string loadInventory(); //Added by Jensen Reitz
 
 	void levelup();
 
