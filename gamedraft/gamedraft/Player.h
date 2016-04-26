@@ -11,7 +11,9 @@ public:
 		cout << "Player" << endl;
 	}
 
-	Player(Player &copy);
+	Player(Player const &copy) {}
+
+	~Player() {}
 
 	//accessors
 	int getxp() { return xp; }

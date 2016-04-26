@@ -1,3 +1,2 @@
 ﻿  User.cpp
-c:\users\jlrei\documents\sourcetree\game\gamedraft\gamedraft\user.h(28): warning C4227: anachronism used: qualifiers on reference are ignored
-c:\users\jlrei\documents\sourcetree\game\gamedraft\gamedraft\user.cpp(27): warning C4227: anachronism used: qualifiers on reference are ignored
+  gamedraft.vcxproj -> C:\Users\jlrei\Documents\SourceTree\Game\gamedraft\Debug\gamedraft.exe

@@ -19,7 +19,7 @@ public:
 		NONE, ARMOR, ATTACK_DAMAGE, HEALTH
 	} Hold_Buff_Type;
 
-	InventoryItem_Hold(float new_durability=0, Hold_Buff_Type new_buff=NONE, float new_modifier=0, string new_name="\0", string new_description="\0");
+	InventoryItem_Hold(float new_durability=0, int new_buff=0, float new_modifier=0, string new_name="\0", string new_description="\0");
 	~InventoryItem_Hold();
 
 	// Accessors ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

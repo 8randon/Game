@@ -8,13 +8,19 @@
 
 #pragma once
 
+#include <fstream>
+#include <cstdio>
+#include <vector>
+#include <stdlib.h>
+#include <time.h>
+
 #include "Player.h"
 
 
 class User
 {
 public:
-	User();
+	User(string const &new_username="\0", string const &new_password="\0");
 	~User();
 
 	// Accessors --------------------------------------------------------------------------------------------------------------------------------------------
@@ -22,15 +28,26 @@ public:
 	int get_currentLevel() const;
 	Player get_saved_player();
 
-	//Mutators
+	//Mutators ----------------------------------------------------------------------------------------------------------------------------------------------
 
-	//- Accepts an int representing the level that the user is currently on and a reference to the user's character to be saved within the wrapper class
-	void save(int updatedLevel, Player &const updatedPlayer);
+	bool save(int updatedLevel, Player &updatedPlayer);
 
+	// Public Member Functions ------------------------------------------------------------------------------------------------------------------------------
+	
+	bool loadSave(string const &username, string const &password);
 
 private:
-	int currentLevel;
+	int currentLevel, saveFile_line;
 	string username, password;
 	Player saved_player;
+
+	//Private Member Functions ------------------------------------------------------------------------------------------------------------------------------
+
+	void decode(string &str);
+	int encode(int saved_level, Player &saved_player);
+	int allocateSaveLine();
+	int loadToFile(string const &encodedString);
+	bool fetch(string const &username, string const &password);
+	Player parsePlayerInfo(string const &str, size_t start);
 };
 

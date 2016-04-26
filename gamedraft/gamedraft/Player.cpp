@@ -1,9 +1,5 @@
 #include "Player.h"
 
-Player::Player(Player & copy)
-{
-}
-
 void Player::levelup()
 {
 	while (xp > 0)
