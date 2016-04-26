@@ -1,6 +1,6 @@
 #include "Character.h"
 
-Character::Character(int hp, int str, int x, int y, int h, int w)
+Character::Character(int mhp, int hp, int str,int armor, int x, int y, int h, int w)
 {
 	cout << "Character Constructor" << endl;
 }
@@ -17,7 +17,7 @@ bool Character::canMove(int temp)
 	if (temp == 1)
 		//y++
 		//if there is an obstacle return false
-		return false;
+			return false;
 	else if (temp == 2)
 		//y--
 		//if obstacle
