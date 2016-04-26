@@ -11,7 +11,11 @@ public:
 		cout << "Player" << endl;
 	}
 
+<<<<<<< HEAD
 	Player(Player const &copy) {}
+=======
+	Player(Player &copy) {}
+>>>>>>> master
 
 	~Player() {}
 
