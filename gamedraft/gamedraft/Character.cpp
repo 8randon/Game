@@ -5,6 +5,11 @@ Character::Character(int mhp, int hp, int str,int armor, int x, int y, int h, in
 	cout << "Character Constructor" << endl;
 }
 
+//TODO Write copy constructor
+Character::Character(Character & copy)
+{
+}
+
 Character::~Character()
 {
 	cout << "Character Destructor" << endl;

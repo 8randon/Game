@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+﻿  User.cpp
+=======
 ﻿  Player.cpp
   LINK : C:\Users\jlrei\Documents\SourceTree\Game\gamedraft\Debug\gamedraft.exe not found or not built by the last incremental link; performing full link
+>>>>>>> master
   gamedraft.vcxproj -> C:\Users\jlrei\Documents\SourceTree\Game\gamedraft\Debug\gamedraft.exe

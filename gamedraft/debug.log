@@ -32,9 +32,16 @@
 [0422/234735:INFO:(0)] Running Awesomium 1.7.5.1
 [0422/234752:INFO:(0)] WebCore is now online.
 [0422/234752:INFO:(0)] Running Awesomium 1.7.5.1
+<<<<<<< HEAD
+[0423/004334:INFO:(0)] WebCore is now online.
+[0423/004334:INFO:(0)] Running Awesomium 1.7.5.1
+[0425/113222:INFO:(0)] WebCore is now online.
+[0425/113222:INFO:(0)] Running Awesomium 1.7.5.1
+=======
 [0425/113736:INFO:(0)] WebCore is now online.
 [0425/113736:INFO:(0)] Running Awesomium 1.7.5.1
 [0426/114333:INFO:(0)] WebCore is now online.
 [0426/114333:INFO:(0)] Running Awesomium 1.7.5.1
 [0426/115004:INFO:(0)] WebCore is now online.
 [0426/115004:INFO:(0)] Running Awesomium 1.7.5.1
+>>>>>>> master
