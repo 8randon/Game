@@ -14,6 +14,10 @@ public:
 
 	bool collision(Character *& player, int charx, int chary, int charw, int charh, char dir);
 
+	wall * getnext() { return pnext; }
+
+	void setnext(wall* newn) { pnext = newn; }
+
 private:
 	wall * pnext;
 };

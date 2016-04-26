@@ -12,6 +12,10 @@ public:
 
 	bool collision(Character *& player, int charx, int chary, int charw, int charh, char dir);
 
+	spikes * getnext() { return pnext; }
+
+	void setnext(spikes* newn) { pnext = newn; }
+
 private:
 	spikes * pnext;
 };

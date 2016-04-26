@@ -23,64 +23,62 @@ void level::setinfo(string filename)
 
 	while (!f.eof())
 	{
+		junk = '\0';
+
 		f >> junk;
 
 		if (junk == 'w') // if wall object
 		{
-			if (getw() == nullptr)
+			if (getwall() == nullptr)
 			{
 				setw(new wall());
-				//wcur = w;
+				wcur = w;
 			}
 			else
 			{
-			//	w->setnext(newwall());
-			//	wcur = w->getnext();
+				wcur->setnext(new wall());
+				wcur = wcur->getnext();
 			}
 
 			f >> junk;
 			f >> coor;
-		//	wcur->setx(coor);
+			wcur->setx(coor);
 			f >> junk;
 			f >> coor;
-			//wcur->setx(coor);
+			wcur->sety(coor);
 			f >> junk;
 			f >> coor;
-			//wcur->setx(coor);
+			wcur->seth(coor);
 			f >> junk;
 			f >> coor;
-		//	wcur->setx(coor);
-			f >> junk;
-			f >> coor;
-			f >> junk;
+			wcur->setw(coor);
 
 		}
-		if (junk == 's') // if spikes object
+		else if (junk == 's') // if spikes object
 		{
-			if (getw() == nullptr)
+			if (gets() == nullptr)
 			{
-			//	sets(newspike());
-				//scur = s;
+				sets(newspike());
+				scur = s;
 			}
 			else
 			{
-				//s->setnext(newspike());
+				scur->setnext(newspike());
+				scur = scur->getnext();
+				
 			}
-			/*f >> junk;
-			f >> coor;
-			scur->setx(coor);
 			f >> junk;
 			f >> coor;
 			scur->setx(coor);
 			f >> junk;
 			f >> coor;
-			scur->setx(coor);
+			scur->sety(coor);
 			f >> junk;
 			f >> coor;
-			scur->setx(coor);
+			scur->seth(coor);
 			f >> junk;
 			f >> coor;
-			f >> junk;*/
+			scur->setw(coor);
 		}
 		
 
@@ -96,4 +94,10 @@ void level::setw(wall * nw)
 void level::sets(spikes * ns)
 {
 	this->s = ns;
+}
+
+
+void runlv(Player *& player)
+{
+
 }

@@ -6,17 +6,17 @@
 
 int main(void)
 {
-//	Game::Start();
+	Game::Start();
 	sf::Texture texture;
 	sf::Sprite sprite;
 	sf::RectangleShape c(sf::Vector2f(10, 10));
 	sf::RenderWindow window;
-	/*Character * pch = nullptr;
+	Character * pch = nullptr;
 	Character ch;
 	pch = &ch;
 	string l1 = "level1.txt";
 
-	level lv1(pch, l1);*/
+	level lv1(pch, l1);
 
 	int i = 0;
 	int j = 0;

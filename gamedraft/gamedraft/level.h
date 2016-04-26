@@ -19,8 +19,10 @@ public:
 
 	wall * newwall() { wall * pmem = new wall(); return pmem; }
 	spikes * newspike() { spikes * pmem = new spikes(); return pmem;}
-	wall * getw() { return w; }
+	wall * getwall() { return w; }
 	spikes * gets() { return s; }
+
+	void runlv();
 
 	void setw(wall * nw);
 	void sets(spikes * ns);

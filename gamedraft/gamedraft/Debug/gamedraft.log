@@ -1,8 +1,8 @@
-﻿  level.cpp
-  Generating Code...
-  Compiling...
-  wall.cpp
-  spikes.cpp
-  main.cpp
-  Generating Code...
+﻿  game.cpp
+c:\users\ankous\documents\game\gamedraft\gamedraft\game.cpp(75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ankous\documents\game\gamedraft\gamedraft\game.cpp(76): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ankous\documents\game\gamedraft\gamedraft\game.cpp(78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ankous\documents\game\gamedraft\gamedraft\game.cpp(79): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ankous\documents\game\gamedraft\gamedraft\game.cpp(81): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ankous\documents\game\gamedraft\gamedraft\game.cpp(82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   gamedraft.vcxproj -> C:\Users\Ankous\Documents\Game\gamedraft\Debug\gamedraft.exe
