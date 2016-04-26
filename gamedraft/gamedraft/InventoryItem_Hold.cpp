@@ -3,10 +3,10 @@
 
 // Constructor/Destructor ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-InventoryItem_Hold::InventoryItem_Hold(float new_durability, Hold_Buff_Type new_buff, float new_modifier, string new_name, string new_description) : InventoryItem(new_name, new_description)
+InventoryItem_Hold::InventoryItem_Hold(float new_durability, int new_buff, float new_modifier, string new_name, string new_description) : InventoryItem(new_name, new_description)
 {
 	this->durability = new_durability;
-	this->buff = new_buff;
+	this->buff = (Hold_Buff_Type)new_buff; 
 }
 
 InventoryItem_Hold::~InventoryItem_Hold()
@@ -22,30 +22,39 @@ float InventoryItem_Hold::get_modifier() const
 
 // Public Member Functions -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//TODO write definition and add the reference to character once Character class is defined
 void InventoryItem_Hold::equip(Character &character)
 {
+	int currAttribute, attributeMod;
+
 	switch(this->buff)
 	{
-	case ARMOR: character.set_armor(character.getarmor()+(this->modifier));
+	case ARMOR: 
+		currAttribute = character.getarmor();
+
+		attributeMod = (int)(currAttribute*(this->modifier));
+
+		character.set_armor(currAttribute+attributeMod);
+
 		break;
-	case ATTACK_DAMAGE: character.set_str(character.getstr()+(this->modifier));
+	case ATTACK_DAMAGE:
+		currAttribute = character.getstr();
+
+		attributeMod = (int)(currAttribute*(this->modifier));
+
+		character.set_str(currAttribute+attributeMod);
 		break;
-	case HEALTH: character.set_hp(character.gethp()+(this->modifier));
+	case HEALTH:
+		currAttribute = character.gethp();
+
+		attributeMod = (int)(currAttribute*(this->modifier));
+
+		character.set_hp(currAttribute+attributeMod);
 		break;
 	}
 }
 
-//TODO write definition and add the reference to character once Character class is defined
+//TODO write definition
 void InventoryItem_Hold::dequip(Character &character)
 {
-	switch(this->buff)
-	{
-	case ARMOR: character.set_armor(character.getarmor()-(this->modifier));
-		break;
-	case ATTACK_DAMAGE: character.set_str(character.getstr()-(this->modifier));
-		break;
-	case HEALTH: character.set_hp(character.gethp()-(this->modifier));
-		break;
-	}
+
 }

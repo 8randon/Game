@@ -20,7 +20,7 @@ public:
 	} Consume_Buff_Type;
 
 
-	InventoryItem_Consume(int new_modifier=0, Consume_Buff_Type new_buff=NONE, string new_name="\0", string new_description="\0");
+	InventoryItem_Consume(int new_modifier=0, int new_buff=0, string new_name="\0", string new_description="\0");
 	~InventoryItem_Consume();
 
 	// Accessors ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
