@@ -91,7 +91,7 @@ void Game::runlv1(level &lvs, Character *&p)
 	}*/
 	window.create(sf::VideoMode(800, 600), "Samp");
 
-	if (!texture.loadFromFile("sprite.png", sf::IntRect(0, 0, 22, 22)))
+	if (!texture.loadFromFile("sprites.png", sf::IntRect(0, 0, 22, 22)))
 	{
 		// error...
 	}
@@ -118,6 +118,7 @@ void Game::runlv1(level &lvs, Character *&p)
 				{
 					if (!w1.collision(p, i, j, 10, 10, 'L') && !w2.collision(p, i, j, 10, 10, 'L') && !s1.collision(p, i, j, 10, 10, 'L') && !s2.collision(p, i, j, 10, 10, 'L'))
 					{
+						sprite.setTextureRect(sf::IntRect(11, 0, 10, 10));
 						i -= 10;
 						cout << i << endl << j << endl << w1.getx() << endl << w1.gety() << endl;
 
@@ -128,6 +129,7 @@ void Game::runlv1(level &lvs, Character *&p)
 				{
 					if (!w1.collision(p, i, j, 10, 10, 'R') && !w2.collision(p, i, j, 10, 10, 'R') && !s1.collision(p, i, j, 10, 10, 'R') && !s2.collision(p, i, j, 10, 10, 'R'))
 					{
+						sprite.setTextureRect(sf::IntRect(11, 11, 10, 10));
 						i += 10;
 						cout << i << endl << j << endl << w1.getx() << endl << w1.gety() << endl;
 						sprite.move(10, 0);
@@ -137,6 +139,7 @@ void Game::runlv1(level &lvs, Character *&p)
 				{
 					if (!w1.collision(p, i, j, 10, 10, 'U') && !w2.collision(p, i, j, 10, 10, 'U') && !s1.collision(p, i, j, 10, 10, 'U') && !s2.collision(p, i, j, 10, 10, 'U'))
 					{
+						sprite.setTextureRect(sf::IntRect(0, 10, 10, 10));
 						j -= 10;
 						cout << i << endl << j << endl << w1.getx() << endl << w1.gety() << endl;
 						sprite.move(0, -10);
@@ -146,6 +149,7 @@ void Game::runlv1(level &lvs, Character *&p)
 				{
 					if (!w1.collision(p, i, j, 10, 10, 'D') && !w2.collision(p, i, j, 10, 10, 'D') && !s1.collision(p, i, j, 10, 10, 'D') && !s2.collision(p, i, j, 10, 10, 'D'))
 					{
+						sprite.setTextureRect(sf::IntRect(0, 0, 10, 10));
 						j += 10;
 						cout << i << endl << j << endl << w1.getx() << endl << w1.gety() << endl;
 						sprite.move(0, 10);
