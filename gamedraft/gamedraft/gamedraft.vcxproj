@@ -152,11 +152,15 @@
     <ClCompile Include="InventoryItem_Hold.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="KeyItem.cpp" />
+    <ClCompile Include="level.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mmenue.cpp" />
+    <ClCompile Include="obst.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="spikes.cpp" />
     <ClCompile Include="splach.cpp" />
     <ClCompile Include="User.cpp" />
+    <ClCompile Include="wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h" />
@@ -167,11 +171,15 @@
     <ClInclude Include="InventoryItem_Consume.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="KeyItem.h" />
+    <ClInclude Include="level.h" />
     <ClInclude Include="mmenue.h" />
+    <ClInclude Include="obst.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="spikes.h" />
     <ClInclude Include="splash.h" />
     <ClInclude Include="stdfx.h" />
     <ClInclude Include="User.h" />
+    <ClInclude Include="wall.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="SaveFiles.txt" />
