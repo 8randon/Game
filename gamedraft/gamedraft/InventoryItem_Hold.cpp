@@ -3,7 +3,7 @@
 
 // Constructor/Destructor ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-InventoryItem_Hold::InventoryItem_Hold(int new_buff, int new_modifier, char new_type_item, string new_name, string new_description) : InventoryItem(new_type_item, new_name, new_description)
+InventoryItem_Hold::InventoryItem_Hold(int new_buff, int new_modifier, char new_type_item, string new_name) : InventoryItem(new_type_item, new_name)
 {
 	this->modifier = new_modifier;
 	this->buff = (Hold_Buff_Type)new_buff; 

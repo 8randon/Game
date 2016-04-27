@@ -1,7 +1,7 @@
 #include "KeyItem.h"
 
 
-KeyItem::KeyItem(int new_keyNumber, string new_name, string new_description) : Item(new_name, new_description)
+KeyItem::KeyItem(int new_keyNumber, string new_name) : Item(new_name)
 {
 }
 

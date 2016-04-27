@@ -3,10 +3,9 @@
 
 // Constructor/Destructor ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Item::Item(string new_name, string new_destription)
+Item::Item(string new_name)
 {
   this->name = new_name;
-  this->description = new_destription;
 }
 
 Item::~Item()
@@ -18,9 +17,4 @@ Item::~Item()
 string Item::get_name() const
 {
 	return this->name;
-}
-
-string Item::get_description() const
-{
-	return this->description;
 }
