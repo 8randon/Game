@@ -1,14 +1,6 @@
-﻿  User.cpp
-  splach.cpp
-  Player.cpp
-  mmenue.cpp
-  main.cpp
-  KeyItem.cpp
-  Item.cpp
-  InventoryItem_Hold.cpp
-  InventoryItem_Consume.cpp
-  InventoryItem.cpp
-  game.cpp
-  Character.cpp
+﻿  wall.cpp
+  spikes.cpp
+  obst.cpp
+  level.cpp
   Generating Code...
-  gamedraft.vcxproj -> C:\Users\Alex\Documents\Game\gamedraft\Debug\gamedraft.exe
+  gamedraft.vcxproj -> C:\Users\Ankous\Documents\Game\gamedraft\Debug\gamedraft.exe
