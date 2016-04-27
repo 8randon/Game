@@ -5,7 +5,7 @@
 
 int main(void)
 {
-//	Game::Start();
+	Game::Start();
 	sf::Texture texture;
 	sf::Sprite sprite;
 	sf::RectangleShape c(sf::Vector2f(10, 10));
