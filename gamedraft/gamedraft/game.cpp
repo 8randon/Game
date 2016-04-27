@@ -121,6 +121,7 @@ void Game::runlv1(level &lvs, Character *&p)
 		wrects.push_back(*(new sf::RectangleShape(sf::Vector2f (wals[i].getw(), wals[i].geth()))));
 		wrects[i].setPosition(wals[i].getx(), wals[i].gety());
 		wrects[i].setTexture(&wallpattern);
+		wrects[i].setTextureRect(sf::IntRect(0, 0, wals[i].getw(), wals[i].geth()));
 	}
 
 
@@ -129,6 +130,7 @@ void Game::runlv1(level &lvs, Character *&p)
 		srects.push_back(*(new sf::RectangleShape(sf::Vector2f(spks[i].getw(), spks[i].geth()))));
 		srects[i].setPosition(spks[i].getx(), spks[i].gety());
 		srects[i].setTexture(&spikepattern);
+		srects[i].setTextureRect(sf::IntRect(0, 0, spks[i].getw(), spks[i].geth()));
 		/*srects.push_back(&spks.at[i]);
 		srects.at[i]->setPosition(spks.at[i]->getx(), spks.at[i]->gety());*/
 	}
