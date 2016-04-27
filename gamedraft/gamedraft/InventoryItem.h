@@ -19,7 +19,7 @@
 class InventoryItem : public Item
 {
 public:
-	InventoryItem(char new_type_item='\0', string new_name="\0", string new_description="\0");
+	InventoryItem(char new_type_item='\0', string new_name="\0");
 	virtual ~InventoryItem();
 
 	//Accessors

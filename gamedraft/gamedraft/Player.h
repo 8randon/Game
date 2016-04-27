@@ -19,6 +19,11 @@ public:
 	int getxp() { return xp; }
 
 	string loadInventory(); //Added by Jensen Reitz
+	string loadKeys(); //
+
+	//mutators
+	void addInventory(InventoryItem newItem);
+	void addKeyItem(KeyItem newKey);
 
 	void levelup();
 

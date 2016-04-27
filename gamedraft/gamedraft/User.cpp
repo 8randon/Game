@@ -110,7 +110,7 @@ int User::encode(int saved_level, Player &saved_player)
 	//Save data in order of:
 	//username, password, current level, max health, current health, strength, armor, inventory
 	string userData = this->username + "," + this->password + "," + (char *)saved_player.getmhp() + "," + (char *)saved_player.gethp() + "," + 
-		(char *)saved_player.getstr() + "," + (char *)saved_player.getarmor() + saved_player.loadInventory();
+		(char *)saved_player.getstr() + "," + (char *)saved_player.getarmor() + saved_player.loadInventory() + saved_player.loadKeys();
 
 	//Generate an encryption key for encoding the saved data
 	int encryptKey = rand()%9 + 1;
@@ -229,10 +229,11 @@ bool User::fetch(string const &username, string const &password)
 	return false;
 }
 
-// username, password, current level, max health, current health, strength, armor, inventory
+
 Player User::parsePlayerInfo(string const &str, size_t start)
 {
-	int j = 0; //Counter variables for loops
+	//String is stored in this configuration: username, password, current level, max health, current health, strength, armor, inventory
+
 	string maxHP, currentHP, strength, armor;
 	vector<string> strings; //Vector to hold substrings of all the parsed data
 	size_t a = start, b;
@@ -259,17 +260,50 @@ Player User::parsePlayerInfo(string const &str, size_t start)
 
 	//Parse data for inventory
 	//hold/consume (h/c), name, buff (int), modifier
-	for(size_t i=4; i<strings.size(); i+=4)
+	size_t i = 4;
+
+	while(strings.at(i)!="*")
 	{
 		InventoryItem *new_item;
 
 		//Check for if the item is consumable or equipable
 		if(strings.at(i)=="h")
-			new_item = new InventoryItem_Hold(stoi(strings.at(i+2)), stoi(strings.at(i+3)), 'h', strings.at(i+1), "\n");
+			new_item = new InventoryItem_Hold(stoi(strings.at(i+2)), stoi(strings.at(i+3)), 'h', strings.at(i+1));
 		else
-			new_item = new InventoryItem_Consume(stoi(strings.at(i+2)), stoi(strings.at(i+3)), 'c', strings.at(i+1), "\n");
+			new_item = new InventoryItem_Consume(stoi(strings.at(i+2)), stoi(strings.at(i+3)), 'c', strings.at(i+1));
 
-		//newPlayer->addInventory(*new_item);
+		try
+		{
+			newPlayer->addInventory(*new_item);
+		}
+		catch(const std::out_of_range &oor) //If there is no more room in the inventory
+		{
+			cout << "Out of Range error: " << oor.what() << endl;
+			cout << "Inventory Limit has been reached" << endl;
+			break; //Exit the loop to avoid more problems
+		}
+
+		i += 4;
+	}
+
+	while(strings.at(i++)!="*") //Loop through until the sentinel character if the above loop had to terminate prematurely
+	{ }
+
+	//Parse key information
+	for(size_t j=i+1; j<strings.size(); j+=2)
+	{
+		KeyItem newKey(stoi(strings.at(i+1)), strings.at(i));
+
+		try
+		{
+			newPlayer->addKeyItem(newKey);
+		}
+		catch(const std::out_of_range &oor)
+		{
+			cout << "Out of Range error: " << oor.what() << endl;
+			cout << "KeyItem Limit has been reached" << endl;
+			break; //Exit the loop to avoid more problems
+		}
 	}
 
 	return *newPlayer;
