@@ -67,3 +67,14 @@ void Player::levelup()
 		}
 	}
 }
+
+void Player::attack(Character *&enemy)
+{
+	int dmg = 0;
+	if (distance(enemy))
+	{
+		while(enemy->gethp() != 0)
+			dmg = str - enemy->getstr();
+			enemy->set_hp(enemy->gethp() - dmg);
+	}
+}

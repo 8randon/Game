@@ -59,8 +59,25 @@ void Character::moveRight()
 
 void Character::attack(Character *&enemy)
 {
-	if (enemy)
+	if (distance(enemy))
 	{
 		enemy->hp -= this->str;
 	}
+}
+
+bool Character::distance(Character *&enemy)
+{
+	int dis = 0;
+	double a = 0;	//hold y values
+	double b = 0;	//hold x values
+	a = y - enemy->getypos();
+	b = x - enemy->getxpos();
+	a = a*a;
+	b = b*b;
+	dis = sqrt(a + b);
+
+	if (dis <= 10) {
+		return true;
+	}
+	else return false;
 }

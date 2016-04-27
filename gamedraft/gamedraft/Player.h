@@ -3,6 +3,7 @@
 #include "InventoryItem_Consume.h"
 #include "InventoryItem_Hold.h"
 #include "KeyItem.h"
+#include <math.h>
 
 class Player:public Character
 {
@@ -21,6 +22,10 @@ public:
 	string loadInventory(); //Added by Jensen Reitz
 
 	void levelup();
+
+	void attack(Character *&enemy);
+
+
 
 
 protected:

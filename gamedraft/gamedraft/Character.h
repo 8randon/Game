@@ -18,7 +18,7 @@ public:
 	~Character();
 
 	//accessors
-	int getmhp() { return this->mhp; } //Added by Jensen Reitz
+	int getmhp() { return this->mhp; } //Added by Jensen Reitz but mostly Alex George
 	int gethp() { return hp; }
 	int getstr() { return str; }
 	int getarmor() { return armor; }
@@ -40,6 +40,10 @@ public:
 	void moveRight();
 
 	virtual void attack(Character *&enemy);
+
+	bool distance(Character *&enemy);
+
+	
 
 
 protected:
