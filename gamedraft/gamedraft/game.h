@@ -4,7 +4,10 @@
 #include <stdio.h>
 #include <vector>
 #include "level.h"
+#include <time.h>
 
+
+using std::time_t;
 using std::vector;
 
 
@@ -18,7 +21,7 @@ public:
 
 	static void loaddata(level lv[], int i);
 
-	static void runlv1(level &lvs, Character *&p);
+	static void runlv(level &lvs, Character *&p);
 
 private:
 	static bool IsExiting();

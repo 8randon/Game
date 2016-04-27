@@ -16,7 +16,7 @@ class MainMenu
        MenuResult action;
      };
 
-   MenuResult Show(sf::RenderWindow& window);
+   static bool Show(sf::RenderWindow& window);
 
  private:
    MenuResult GetMenuResponse(sf::RenderWindow& window);

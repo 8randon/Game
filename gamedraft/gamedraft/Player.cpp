@@ -126,7 +126,7 @@ void Player::levelup()
 void Player::attack(Character *&enemy)
 {
 	int dmg = 0;
-	if (distance(enemy))
+	if (distance(*enemy))
 	{
 		while(enemy->gethp() != 0)
 			dmg = str - enemy->getstr();

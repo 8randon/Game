@@ -7,13 +7,40 @@ void Game::Start(void)
 	if (_gameState != Uninitialized)
 		return;
 
-	_mainWindow.create(sf::VideoMode(1024, 768, 32), "Pang!");
+	sf::Texture texture;
+	sf::Sprite sprite;
+
+	_mainWindow.create(sf::VideoMode(800, 600), "CRAWL");
 	_gameState = Game::Playing;
 
-	while (!IsExiting())
+	if (!texture.loadFromFile("Title.png"))
 	{
-		GameLoop();
+		return;
 	}
+
+	sprite.setTexture(texture);
+	_mainWindow.draw(sprite);
+	_mainWindow.display();
+
+	sf::Event event;
+	while (true)
+	{
+		while (_mainWindow.pollEvent(event))
+		{
+			if (event.type == sf::Event::EventType::KeyPressed)
+			{
+				if (event.key.code == sf::Keyboard::Space)
+				{
+					while (!IsExiting())
+					{
+						GameLoop();
+					}
+				}
+			}
+		}
+	}
+
+	
 
 	_mainWindow.close();
 }
@@ -33,7 +60,9 @@ void Game::GameLoop()
 
 	Character * pl = new Player();
 
-	level levels[1] = {level(pl,"level1.txt")};
+	//dynamic_cast<Player&>(*pl);
+
+	level levels[1] = {level("level1.txt")};
 
 	while (_mainWindow.pollEvent(currentEvent))
 	{
@@ -42,10 +71,10 @@ void Game::GameLoop()
 		{
 		case Game::Playing:
 		{
-			_mainWindow.clear(sf::Color(255, 0, 0));
-			_mainWindow.display();
+			//_mainWindow.clear(sf::Color(255, 0, 0));
+			//_mainWindow.display();
 
-			runlv1(levels[0], pl);
+			runlv(levels[0], pl);
 
 			if (currentEvent.type == sf::Event::Closed)
 			{
@@ -63,22 +92,44 @@ void Game::loaddata(level lv[], int i)
 }
 
 
-void Game::runlv1(level &lvs, Character *&p)
+void Game::runlv(level &lvs, Character *&p)
 {
+
+	sf::SoundBuffer buffer;
+	// load something into the sound buffer...
+	buffer.loadFromFile("attack.wav");
+	sf::Sound sound;
+	sound.setBuffer(buffer);
+
+	sf::SoundBuffer ebuffer;
+	// load something into the sound buffer...
+	ebuffer.loadFromFile("enemyattack.wav");
+	sf::Sound esound;
+	esound.setBuffer(ebuffer);
+	
+
 	wall * wpcur = lvs.getwall();
 	spikes * spcur = lvs.gets();
 	//sf::RectangleShape *wrcur = nullptr;
 	//sf::RectangleShape *srcur = nullptr;
+	time_t structime = time(0);
+	struct tm * ptime = localtime(&structime);
 
 	bool collidew = false;
 	bool collides = false;
 
+	int mi = 0;
 	int i = 0;
+	int tcur = ptime->tm_sec;
+	int tprevattack = ptime->tm_sec, tprevmove = ptime->tm_sec;
 	
 	/*wall w1(lvs.getwall()->getx(), lvs.getwall()->gety(), lvs.getwall()->geth(), lvs.getwall()->getw()),
 		w2(lvs.getwall()->getnext()->getx(), lvs.getwall()->getnext()->gety(), lvs.getwall()->getnext()->geth(), lvs.getwall()->getnext()->getw());
 	spikes s1(lvs.gets()->getx(), lvs.gets()->gety(), lvs.gets()->geth(), lvs.gets()->getw()),
 		s2(lvs.gets()->getnext()->getx(), lvs.gets()->getnext()->gety(), lvs.gets()->getnext()->geth(), lvs.gets()->getnext()->getw());*/
+
+	sf::Texture mstrtexture;
+	mstrtexture.loadFromFile("monstertexture.png", sf::IntRect(0, 0, 10, 10));
 
 	sf::Texture wallpattern;
 	wallpattern.loadFromFile("walltile.png", sf::IntRect(0, 0, 1000, 1000));
@@ -92,9 +143,13 @@ void Game::runlv1(level &lvs, Character *&p)
 	sf::Sprite floor;
 	floor.setTexture(floorpattern);
 
+	vector<sf::Sprite> mnstrs;
+
 	vector<wall> wals;
 
 	vector<spikes> spks;
+
+	vector<sf::RectangleShape> mrects;
 
 	vector<sf::RectangleShape> wrects;
 
@@ -102,6 +157,32 @@ void Game::runlv1(level &lvs, Character *&p)
 
 	//wrcur = wrects.data[0];
 	//srcur = srects.data[0];
+
+	/*while (mi < lvs.getnummonsters())
+	{
+		mrects.push_back(*(new sf::RectangleShape(sf::Vector2f(10, 10))));
+		mrects[mi].setPosition(lvs.getmonster(mi).getxpos(), lvs.getmonster(mi).getypos());
+		mrects[mi].setTexture(&mstrtexture);
+		mrects[mi].setTextureRect(sf::IntRect(0, 0, 10, 10));
+		mi++;
+	}*/
+
+	//mi = 0;
+
+	for (mi = 0; mi < lvs.getnummonsters(); mi++)
+	{
+		mnstrs.push_back(*(new sf::Sprite()));
+	}
+
+	mi =0;
+
+	while (mi < lvs.getnummonsters())
+	{
+		mnstrs[mi].setTexture(mstrtexture);
+		mnstrs[mi].setTextureRect(sf::IntRect(0, 0, 10, 10));
+		mnstrs[mi].setPosition(lvs.getmonster(mi).getxpos(), lvs.getmonster(mi).getypos());
+		mi++;
+	}
 
 	while (wpcur)
 	{
@@ -203,6 +284,7 @@ void Game::runlv1(level &lvs, Character *&p)
 						//cout << i << endl << j << endl << w1.getx() << endl << w1.gety() << endl;
 
 						sprite.move(-10, 0);
+						p->setpos(i, j);
 					}
 				}
 
@@ -225,6 +307,7 @@ void Game::runlv1(level &lvs, Character *&p)
 						i += 10;
 					//	cout << i << endl << j << endl << w1.getx() << endl << w1.gety() << endl;
 						sprite.move(10, 0);
+						p->setpos(i, j);
 					}
 				}
 				if (event.key.code == sf::Keyboard::Up)
@@ -245,6 +328,7 @@ void Game::runlv1(level &lvs, Character *&p)
 						j -= 10;
 						//cout << i << endl << j << endl << w1.getx() << endl << w1.gety() << endl;
 						sprite.move(0, -10);
+						p->setpos(i, j);
 					}
 				}
 				if (event.key.code == sf::Keyboard::Down)
@@ -265,9 +349,66 @@ void Game::runlv1(level &lvs, Character *&p)
 						j += 10;
 						//cout << i << endl << j << endl << w1.getx() << endl << w1.gety() << endl;
 						sprite.move(0, 10);
+						p->setpos(i, j);
+					}
+				}
+
+				if (event.key.code == sf::Keyboard::Space)
+				{
+					for (mi = 0; mi < lvs.getnummonsters(); mi++)
+					{
+						if (p->isDistance_attack(p->distance(lvs.getmonster(mi))))
+							p->attack(lvs.getmonster(mi)); 
+						sound.play();
+
 					}
 				}
 			}
+		}
+
+		tcur = ptime->tm_sec;
+
+		structime = time(0);
+		ptime = localtime(&structime);
+
+		if (ptime->tm_sec >= 59)
+		{
+			ptime->tm_sec = 0;
+			tcur = 0;
+			tprevmove = 0;
+			tprevattack = 0;
+		}
+
+		cout << ptime->tm_sec << endl;
+
+		cout << tcur << endl;
+
+		cout << tprevmove << endl;
+
+		cout << tprevattack << endl;
+
+		if ((float)(tcur - tprevmove) >= .1)
+		{
+			for (mi = 0; mi < lvs.getnummonsters(); mi++)
+			{
+				if (!lvs.getmonster(mi).checkdead())
+				{
+					lvs.getmonster(mi).automove(p);
+					mnstrs[mi].setPosition(lvs.getmonster(mi).getxpos(), lvs.getmonster(mi).getypos());
+				}
+			}
+			tprevmove = tcur;
+		}
+
+		if ((float)(tcur - tprevattack) >= .5)
+		{
+			for (mi = 0; mi < lvs.getnummonsters(); mi++)
+			{
+				if(!lvs.getmonster(mi).checkdead())
+					lvs.getmonster(mi).attack(*p);
+				esound.play();
+			}
+			tprevattack = tcur;
 		}
 
 		window.clear();
@@ -278,11 +419,25 @@ void Game::runlv1(level &lvs, Character *&p)
 		{
 			window.draw(wrects[spot]);
 		}
+
 		spot = 0;
+
 		for (spot = 0; spot < lvs.getnums(); spot++)
 		{
 			window.draw(srects[spot]);
 		}
+		
+		for (mi = 0; mi < lvs.getnummonsters(); mi++)
+		{
+			if (!lvs.getmonster(mi).checkdead())
+			{
+				window.draw(mnstrs[mi]);
+			}
+		}
+
+
+		//if (!p->checkdead())
+			//break;
 
 		/*window.draw(wall1);
 		window.draw(wall2);

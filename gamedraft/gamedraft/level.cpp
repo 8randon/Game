@@ -1,11 +1,12 @@
 #include "level.h"
 
-level::level(Character * p, string filename)
+level::level(string filename)
 {
 	w = nullptr;
 	s = nullptr;
 	numwalls = 0;
 	numspikes = 0;
+	nummstrs = 0;
 
 	setinfo(filename);
 }
@@ -19,6 +20,7 @@ void level::setinfo(string filename)
 	spikes *scur = s;
 	wall *wcur = w;
 	int coor = 0;
+	int mc = 0 , mx = 0, my = 0;
 
 	char junk = '\0';
 
@@ -83,6 +85,29 @@ void level::setinfo(string filename)
 			f >> junk;
 			f >> coor;
 			scur->setw(coor);
+		}
+		else if (junk == 'm')
+		{
+			m.push_back(*(new Monster()));
+			addnummnstrs(1);
+
+			f >> junk;
+			f >> mx;
+			f >> junk;
+			f >> my;
+			m[mc].setpos(mx, my);
+			f >> junk;
+			f >> coor;
+			m[mc].set_armor(coor);
+			f >> junk;
+			f >> coor;
+			m[mc].set_hp(coor);
+			m[mc].set_mhp(m[mc].gethp());
+			f >> junk;
+			f >> coor;
+			m[mc].set_str(coor);
+			
+			mc++;
 		}
 		
 

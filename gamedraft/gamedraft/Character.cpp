@@ -1,7 +1,18 @@
 #include "Character.h"
 
-Character::Character(int mhp, int hp, int str, int armor, int x, int y, int h, int w)
+Character::Character(int mmmhp, int mmhp, int mstr, int marmor, int mx, int my, int mh, int mw)
 {
+	mhp = mmmhp;
+	hp = mmhp;
+	str = mstr;
+	armor = marmor;
+	x = mx;
+	y = my;
+	h = mh;
+	w = mw;
+
+	isDead = false;
+
 	cout << "Character Constructor" << endl;
 }
 
@@ -54,43 +65,44 @@ Character::~Character()
 
 void Character::automove(Character *&player)
 {
+	
 	int temp = 0;
 	//enemy reference is the player
-	if (isDistance(distance(player)))
+	if (isDistance(distance(*player)))
 	{
-		while (distance(player))
-		{
-			if (player->getxpos() < this->x)
-				x--;
-			if (player->getxpos() > this->x)
-				x++;
-			if (player->getypos() < this->y)
-				y--;
-			if (player->getypos() > this->y)
-				y++;
-		}
-	}
+			cout << "following" << endl;
+			if (player->getxpos() <= this->x)
+				this->x-=10;
+			if (player->getxpos() >= this->x)
+				this->x+=10;
+			if (player->getypos() <= this->y)
+				this->y-=10;
+			if (player->getypos() >= this->y)
+				this->y+=10;
 
+			//this->setpos(x, y);
+	}
 }
 
-void Character::attack(Character *&enemy)
+
+void Character::attack(Character &enemy)
 {
+	
 	int dmg = 0;
-	if (distance(enemy))	//isdistance
+	if (isDistance_attack(distance(enemy)))
 	{
-		while (enemy->gethp() != 0)
-			dmg = armor - enemy->getstr();
-		enemy->set_hp(enemy->gethp() - dmg);
+		cout << "attacking" << endl;
+		enemy.set_hp(enemy.gethp() - this->str);
 	}
 }
 
-int Character::distance(Character *&player)
+int Character::distance(Character &player)
 {
 	int dis = 0;
 	double a = 0;	//hold y values
 	double b = 0;	//hold x values
-	a = y - player->getypos();
-	b = x - player->getxpos();
+	a = y - player.getypos();
+	b = x - player.getxpos();
 	a = a*a;
 	b = b*b;
 	dis = (int)sqrt(a + b);
@@ -100,7 +112,28 @@ int Character::distance(Character *&player)
 
 bool Character::isDistance(int temp)
 {
-	if (temp <= 20)
+	if (temp <= 1000)
+	{
 		return true;
-	else return false;
+	}
+		
+	else
+	{
+		return false;
+	}
+		
+}
+
+bool Character::isDistance_attack(int temp)
+{
+	if (temp <= 10)
+	{
+		return true;
+	}
+
+	else
+	{
+		return false;
+	}
+
 }
