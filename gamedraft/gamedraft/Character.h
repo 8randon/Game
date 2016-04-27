@@ -12,13 +12,11 @@ class Character
 public:
 	//constructor
 	Character(int mhp = 0, int hp = 0, int str = 0, int armor=0, int x = 0, int y = 0, int h = 0, int w = 0);
-	Character(Character &copy);
 
 	//destructor
-	~Character();
+	virtual ~Character();
 
 	//accessors
-
 	int getmhp() { return this->mhp; } //Added by Jensen Reitz but mostly Alex George
 	int gethp() { return hp; }
 	int getstr() { return str; }
@@ -34,15 +32,19 @@ public:
 	void set_armor(const int new_armor) { this->armor = new_armor; }
 
 	//member functions
-	virtual bool canMove(int temp);
-	void moveUp();
-	void moveDown();
-	void moveLeft();
-	void moveRight();
+	//virtual bool canMove(int temp);
+	//void moveUp();
+	//void moveDown();
+	//void moveLeft();
+	//void moveRight();
 
 	virtual void attack(Character *&enemy);
 
-	bool distance(Character *&enemy);
+	int distance(Character *&enemy);
+
+	bool isDistance(int temp);
+
+	void automove(Character *&enemy);
 
 	
 
