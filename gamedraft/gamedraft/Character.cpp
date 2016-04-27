@@ -74,7 +74,7 @@ bool Character::distance(Character *&enemy)
 	b = x - enemy->getxpos();
 	a = a*a;
 	b = b*b;
-	dis = sqrt(a + b);
+	dis = (int)sqrt(a + b);
 
 	if (dis <= 10) {
 		return true;

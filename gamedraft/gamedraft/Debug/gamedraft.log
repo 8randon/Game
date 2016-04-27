@@ -1,13 +1,12 @@
-﻿  User.cpp
+﻿  Character.cpp
+  Generating Code...
+c:\users\jlrei\documents\sourcetree\game\gamedraft\gamedraft\character.cpp(38): warning C4715: 'Character::canMove': not all control paths return a value
+  Compiling...
+  User.cpp
   Player.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
   InventoryItem_Hold.cpp
   InventoryItem_Consume.cpp
   InventoryItem.cpp
-  Character.cpp
-c:\users\alex\documents\game\gamedraft\gamedraft\character.cpp(77): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  Generating Code...
-c:\users\alex\documents\game\gamedraft\gamedraft\character.cpp(38): warning C4715: 'Character::canMove': not all control paths return a value
-  LINK : C:\Users\Alex\Documents\Game\gamedraft\Debug\gamedraft.exe not found or not built by the last incremental link; performing full link
-InventoryItem.obj : error LNK2019: unresolved external symbol "public: __thiscall Item::Item(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0Item@@QAE@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) referenced in function "public: __thiscall InventoryItem::InventoryItem(char,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0InventoryItem@@QAE@DV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
-User.obj : error LNK2019: unresolved external symbol "public: __thiscall KeyItem::KeyItem(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0KeyItem@@QAE@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) referenced in function "public: void __thiscall KeyItem::`default constructor closure'(void)" (??_FKeyItem@@QAEXXZ)
-C:\Users\Alex\Documents\Game\gamedraft\Debug\gamedraft.exe : fatal error LNK1120: 2 unresolved externals
+  gamedraft.vcxproj -> C:\Users\jlrei\Documents\SourceTree\Game\gamedraft\Debug\gamedraft.exe
