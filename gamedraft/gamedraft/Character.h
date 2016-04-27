@@ -18,11 +18,8 @@ public:
 	~Character();
 
 	//accessors
-<<<<<<< HEAD
+
 	int getmhp() { return this->mhp; } //Added by Jensen Reitz but mostly Alex George
-=======
-	int getmhp() { return this->mhp; }
->>>>>>> e313170a1bc8e1a218d3b3504fa0b9514813dc01
 	int gethp() { return hp; }
 	int getstr() { return str; }
 	int getarmor() { return armor; }
