@@ -1,12 +1,14 @@
-﻿  Character.cpp
-  Generating Code...
-c:\users\jlrei\documents\sourcetree\game\gamedraft\gamedraft\character.cpp(38): warning C4715: 'Character::canMove': not all control paths return a value
-  Compiling...
-  User.cpp
+﻿  User.cpp
+  splach.cpp
   Player.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
+  mmenue.cpp
+  main.cpp
+  KeyItem.cpp
+  Item.cpp
   InventoryItem_Hold.cpp
   InventoryItem_Consume.cpp
   InventoryItem.cpp
-  gamedraft.vcxproj -> C:\Users\jlrei\Documents\SourceTree\Game\gamedraft\Debug\gamedraft.exe
+  game.cpp
+  Character.cpp
+  Generating Code...
+  gamedraft.vcxproj -> C:\Users\Alex\Documents\Game\gamedraft\Debug\gamedraft.exe
