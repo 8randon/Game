@@ -1,21 +1,3 @@
-﻿  wall.cpp
-  splach.cpp
-  spikes.cpp
-  Player.cpp
-  mmenue.cpp
-  main.cpp
-  level.cpp
-  KeyItem.cpp
-  Item.cpp
-  InventoryItem_Hold.cpp
-  InventoryItem_Consume.cpp
-  InventoryItem.cpp
-  game.cpp
-c:\users\ankous\documents\game\gamedraft\gamedraft\game.cpp(109): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\ankous\documents\game\gamedraft\gamedraft\game.cpp(110): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\ankous\documents\game\gamedraft\gamedraft\game.cpp(116): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\ankous\documents\game\gamedraft\gamedraft\game.cpp(117): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Character.cpp
-  Generating Code...
-c:\users\ankous\documents\game\gamedraft\gamedraft\character.cpp(33): warning C4715: 'Character::canMove': not all control paths return a value
+﻿  spikes.cpp
+cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
   gamedraft.vcxproj -> C:\Users\Ankous\Documents\Game\gamedraft\Debug\gamedraft.exe

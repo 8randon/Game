@@ -80,6 +80,18 @@ void Game::runlv1(level &lvs, Character *&p)
 	spikes s1(lvs.gets()->getx(), lvs.gets()->gety(), lvs.gets()->geth(), lvs.gets()->getw()),
 		s2(lvs.gets()->getnext()->getx(), lvs.gets()->getnext()->gety(), lvs.gets()->getnext()->geth(), lvs.gets()->getnext()->getw());*/
 
+	sf::Texture wallpattern;
+	wallpattern.loadFromFile("walltile.png", sf::IntRect(0, 0, 1000, 1000));
+
+	sf::Texture spikepattern;
+	spikepattern.loadFromFile("spiketile.png", sf::IntRect(0, 0, 1000, 1000));
+
+	sf::Texture floorpattern;
+	floorpattern.loadFromFile("floorpattern.png");
+
+	sf::Sprite floor;
+	floor.setTexture(floorpattern);
+
 	vector<wall> wals;
 
 	vector<spikes> spks;
@@ -108,6 +120,7 @@ void Game::runlv1(level &lvs, Character *&p)
 	{
 		wrects.push_back(*(new sf::RectangleShape(sf::Vector2f (wals[i].getw(), wals[i].geth()))));
 		wrects[i].setPosition(wals[i].getx(), wals[i].gety());
+		wrects[i].setTexture(&wallpattern);
 	}
 
 
@@ -115,6 +128,7 @@ void Game::runlv1(level &lvs, Character *&p)
 	{
 		srects.push_back(*(new sf::RectangleShape(sf::Vector2f(spks[i].getw(), spks[i].geth()))));
 		srects[i].setPosition(spks[i].getx(), spks[i].gety());
+		srects[i].setTexture(&spikepattern);
 		/*srects.push_back(&spks.at[i]);
 		srects.at[i]->setPosition(spks.at[i]->getx(), spks.at[i]->gety());*/
 	}
@@ -255,6 +269,7 @@ void Game::runlv1(level &lvs, Character *&p)
 		}
 
 		window.clear();
+		window.draw(floor);
 		window.draw(sprite);
 
 		for (spot = 0; spot < lvs.getnumw(); spot++) 
