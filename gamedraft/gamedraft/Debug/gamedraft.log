@@ -1,6 +1,2 @@
-﻿  wall.cpp
-  spikes.cpp
-  obst.cpp
-  level.cpp
-  Generating Code...
+﻿  main.cpp
   gamedraft.vcxproj -> C:\Users\Ankous\Documents\Game\gamedraft\Debug\gamedraft.exe
