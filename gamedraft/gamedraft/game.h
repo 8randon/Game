@@ -2,7 +2,11 @@
 #include "SFML/Window.hpp"
 #include "SFML/Graphics.hpp"
 #include <stdio.h>
+#include <vector>
 #include "level.h"
+
+using std::vector;
+
 
 class Game
 {

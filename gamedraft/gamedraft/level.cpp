@@ -4,7 +4,8 @@ level::level(Character * p, string filename)
 {
 	w = nullptr;
 	s = nullptr;
-
+	numwalls = 0;
+	numspikes = 0;
 
 	setinfo(filename);
 }
@@ -33,11 +34,13 @@ void level::setinfo(string filename)
 			{
 				setw(new wall());
 				wcur = w;
+				addnumw(1);
 			}
 			else
 			{
 				wcur->setnext(new wall());
 				wcur = wcur->getnext();
+				addnumw(1);
 			}
 
 			f >> junk;
@@ -60,12 +63,13 @@ void level::setinfo(string filename)
 			{
 				sets(newspike());
 				scur = s;
+				addnums(1);
 			}
 			else
 			{
 				scur->setnext(newspike());
 				scur = scur->getnext();
-				
+				addnums(1);
 			}
 			f >> junk;
 			f >> coor;

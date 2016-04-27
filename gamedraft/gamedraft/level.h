@@ -22,12 +22,21 @@ public:
 	wall * getwall() { return w; }
 	spikes * gets() { return s; }
 
-	void runlv();
+	int getnumw() { return numwalls; }
+	int getnums() { return numspikes; }
+
+	//void runlv();
+
+
+	void addnumw(int newalls) { numwalls += newalls; }
+	void addnums(int newspikes) { numspikes += newspikes; }
 
 	void setw(wall * nw);
 	void sets(spikes * ns);
 
 private:
+	int numwalls;
+	int numspikes;
 	wall * w;
 	spikes * s;
 };
