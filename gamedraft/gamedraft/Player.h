@@ -18,8 +18,8 @@ public:
 	//accessors
 	int getxp() { return xp; }
 
-	string loadInventory(); //Added by Jensen Reitz
-	string loadKeys(); //
+	string loadInventory();
+	string loadKeys();
 
 	//mutators
 	void addInventory(InventoryItem newItem);

@@ -1,6 +1,7 @@
 #include "Player.h"
 
-
+//-	Converts the player's inventory into a string to be passed back and encrypted in User::encode()
+//Written by Jensen Reitz
 string Player::loadInventory()
 {
 	//String is stored in this configuraation: hold/consume (h/c), name, buff (int), modifier
@@ -32,6 +33,8 @@ string Player::loadInventory()
 	return inventoryData;
 }
 
+//-	Converts the player's keypuch into a string to be passed back and encrypted in User::encode()
+//Written by Jensen Reitz
 string Player::loadKeys()
 {
 	//String is stored in the format: name, keyNumber
@@ -53,6 +56,9 @@ string Player::loadKeys()
 	return keyData;
 }
 
+//- Adds an ImventoryItem into the player's inventory
+//NOTE: This function is called within a try/catch block, so any pointer-out-of-bounds exception errors will be thrown and taken care of
+//Written by Jensen Reitz
 void Player::addInventory(InventoryItem newItem)
 {
 	InventoryItem *pCurr = this->inventory;
@@ -63,6 +69,9 @@ void Player::addInventory(InventoryItem newItem)
 	*pCurr = newItem;
 }
 
+//- Adds a KeyItem into the player's keypouch
+//NOTE: This function is called within a try/catch block, so any pointer-out-of-bounds exception errors will be thrown and taken care of
+//Written by Jensen Reitz
 void Player::addKeyItem(KeyItem newKey)
 {
 	KeyItem *pCurr = this->keypouch;

@@ -18,7 +18,7 @@ public:
 	~Character();
 
 	//accessors
-	int getmhp() { return this->mhp; } //Added by Jensen Reitz
+	int getmhp() { return this->mhp; }
 	int gethp() { return hp; }
 	int getstr() { return str; }
 	int getarmor() { return armor; }
