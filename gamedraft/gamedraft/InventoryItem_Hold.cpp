@@ -3,7 +3,7 @@
 
 // Constructor/Destructor ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-InventoryItem_Hold::InventoryItem_Hold(int new_buff, int new_modifier, char new_type_item, string new_name) : InventoryItem(new_type_item, new_name)
+InventoryItem_Hold::InventoryItem_Hold(int new_buff, int new_modifier, string new_name, char new_type_item) : InventoryItem(new_name, new_type_item)
 {
 	this->modifier = new_modifier;
 	this->buff = (Hold_Buff_Type)new_buff; 
@@ -39,9 +39,7 @@ void InventoryItem_Hold::equip(Character &character)
 	case ARMOR: 
 		currAttribute = character.getarmor();
 
-		attributeMod = (int)(currAttribute*(this->modifier/100));
-
-		character.set_armor(currAttribute+attributeMod);
+		character.set_armor(currAttribute+(this->modifier));
 
 		break;
 	case ATTACK_DAMAGE:
@@ -54,9 +52,7 @@ void InventoryItem_Hold::equip(Character &character)
 	case HEALTH:
 		currAttribute = character.gethp();
 
-		attributeMod = (int)(currAttribute*(this->modifier/100));
-
-		character.set_hp(currAttribute+attributeMod);
+		character.set_hp(currAttribute+(this->modifier));
 		break;
 	}
 }
@@ -67,5 +63,27 @@ void InventoryItem_Hold::equip(Character &character)
 //PRECONDITION: The character must have the attribute that will be modified as a member, this will not be checked within the function
 void InventoryItem_Hold::dequip(Character &character)
 {
+	int currAttribute, attributeMod;
 
+	switch(this->buff)
+	{
+	case ARMOR:
+		currAttribute = character.getarmor();
+
+		character.set_armor(currAttribute+(this->modifier));
+
+		break;
+	case ATTACK_DAMAGE:
+		currAttribute = character.getstr();
+
+		attributeMod = (int)(currAttribute*(this->modifier/100));
+
+		character.set_str(currAttribute+attributeMod);
+		break;
+	case HEALTH:
+		currAttribute = character.gethp();
+
+		character.set_hp(currAttribute+(this->modifier));
+		break;
+	}
 }

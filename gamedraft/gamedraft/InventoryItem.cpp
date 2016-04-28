@@ -3,7 +3,7 @@
 
 // Constructor/Destructor ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-InventoryItem::InventoryItem(char new_type_item, string new_name) : Item(new_name)
+InventoryItem::InventoryItem(string new_name, char new_type_item) : Item(new_name)
 {
 	this->type_item = new_type_item;
 }

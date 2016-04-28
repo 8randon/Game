@@ -1,12 +1,12 @@
 ﻿  game.cpp
-c:\users\ankous\documents\game\gamedraft\gamedraft\game.cpp(183): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\ankous\documents\game\gamedraft\gamedraft\game.cpp(202): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\ankous\documents\game\gamedraft\gamedraft\game.cpp(203): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\ankous\documents\game\gamedraft\gamedraft\game.cpp(211): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\ankous\documents\game\gamedraft\gamedraft\game.cpp(212): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\ankous\documents\game\gamedraft\gamedraft\game.cpp(397): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\ankous\documents\game\gamedraft\gamedraft\game.cpp(116): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(183): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(202): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(203): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(211): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(212): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(397): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(116): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\time.h(505): note: see declaration of 'localtime'
-c:\users\ankous\documents\game\gamedraft\gamedraft\game.cpp(372): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(372): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\time.h(505): note: see declaration of 'localtime'
-  gamedraft.vcxproj -> C:\Users\Ankous\Documents\Game\gamedraft\Debug\gamedraft.exe
+  gamedraft.vcxproj -> C:\Users\Jensen\Documents\SourceTree\Game\gamedraft\Debug\gamedraft.exe

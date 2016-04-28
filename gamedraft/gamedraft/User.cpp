@@ -268,9 +268,9 @@ Player User::parsePlayerInfo(string const &str, size_t start)
 
 		//Check for if the item is consumable or equipable
 		if(strings.at(i)=="h")
-			new_item = new InventoryItem_Hold(stoi(strings.at(i+2)), stoi(strings.at(i+3)), 'h', strings.at(i+1));
+			new_item = new InventoryItem_Hold(stoi(strings.at(i+2)), stoi(strings.at(i+3)), strings.at(i+1));
 		else
-			new_item = new InventoryItem_Consume(stoi(strings.at(i+2)), stoi(strings.at(i+3)), 'c', strings.at(i+1));
+			new_item = new InventoryItem_Consume(stoi(strings.at(i+2)), stoi(strings.at(i+3)),strings.at(i+1));
 
 		try
 		{

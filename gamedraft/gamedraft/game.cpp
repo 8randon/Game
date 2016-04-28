@@ -435,10 +435,6 @@ void Game::runlv(level &lvs, Character *&p)
 			}
 		}
 
-
-		//if (!p->checkdead())
-			//break;
-
 		/*window.draw(wall1);
 		window.draw(wall2);
 		window.draw(spikes1);

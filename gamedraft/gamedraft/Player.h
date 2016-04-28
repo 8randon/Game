@@ -8,10 +8,15 @@
 class Player:public Character
 {
 public:
-	Player(int hp = 50, int str = 5, int armor=0, int x = 0, int y = 0, int h = 0, int w = 0) : Character(hp, hp, str, armor, x, y, h, w)
+	Player(int hp = 50, int str = 10, int armor=0, int x = 0, int y = 0, int h = 0, int w = 0) : Character(hp, hp, str, armor, x, y, h, w)
 	{
 		this->xp = 0;
 		this->mgc = 0;
+
+		// Add default items
+		this->addInventory(*(new InventoryItem_Hold(2, 10,"Short Sword")));
+		this->addInventory(*(new InventoryItem_Hold(1, 10, "Leather Armor")));
+
 		cout << "Player" << endl;
 	}
 
