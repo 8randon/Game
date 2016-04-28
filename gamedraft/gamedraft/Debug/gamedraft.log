@@ -1,4 +1,11 @@
-﻿  game.cpp
+﻿  wall.cpp
+  splach.cpp
+  spikes.cpp
+  obst.cpp
+  mmenue.cpp
+  main.cpp
+  level.cpp
+  game.cpp
 c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(193): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(212): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(213): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -11,4 +18,13 @@ c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(386): war
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\time.h(505): note: see declaration of 'localtime'
 c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(480): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(1266): note: see declaration of '_sleep'
+  User.cpp
+  Player.cpp
+  KeyItem.cpp
+  Item.cpp
+  InventoryItem_Hold.cpp
+  InventoryItem_Consume.cpp
+  InventoryItem.cpp
+  Generating Code...
+  LINK : C:\Users\Jensen\Documents\SourceTree\Game\gamedraft\Debug\gamedraft.exe not found or not built by the last incremental link; performing full link
   gamedraft.vcxproj -> C:\Users\Jensen\Documents\SourceTree\Game\gamedraft\Debug\gamedraft.exe
