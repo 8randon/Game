@@ -55,7 +55,6 @@ bool Game::IsExiting()
 
 void Game::GameLoop()
 {
-	Player p;
 	sf::Event currentEvent;
 
 	Character * pl = new Player();
@@ -74,7 +73,9 @@ void Game::GameLoop()
 			//_mainWindow.clear(sf::Color(255, 0, 0));
 			//_mainWindow.display();
 
-			runlv(levels[0], pl);
+			if(!pl->checkdead()) //Run level while the player is alive
+				runlv(levels[0], pl);
+			
 
 			if (currentEvent.type == sf::Event::Closed)
 			{
@@ -252,7 +253,7 @@ void Game::runlv(level &lvs, Character *&p)
 
 	i = 0;
 
-	while (window.isOpen())
+	while (window.isOpen() && !p->checkdead())
 	{
 		sf::Event event;
 		while (window.pollEvent(event))
@@ -357,8 +358,12 @@ void Game::runlv(level &lvs, Character *&p)
 				{
 					for (mi = 0; mi < lvs.getnummonsters(); mi++)
 					{
-						if (p->isDistance_attack(p->distance(lvs.getmonster(mi))))
-							p->attack(lvs.getmonster(mi)); 
+						if(p->isDistance_attack(p->distance(lvs.getmonster(mi))))
+						{
+							p->attack(lvs.getmonster(mi));
+							cout << "Monster Health: " << lvs.getmonster(mi).gethp() << endl;
+						}
+
 						sound.play();
 
 					}
@@ -379,13 +384,13 @@ void Game::runlv(level &lvs, Character *&p)
 			tprevattack = 0;
 		}
 
-		cout << ptime->tm_sec << endl;
+		//cout << ptime->tm_sec << endl;
 
-		cout << tcur << endl;
+		//cout << tcur << endl;
 
-		cout << tprevmove << endl;
+		//cout << tprevmove << endl;
 
-		cout << tprevattack << endl;
+		//cout << tprevattack << endl;
 
 		if ((float)(tcur - tprevmove) >= .1)
 		{
@@ -406,6 +411,8 @@ void Game::runlv(level &lvs, Character *&p)
 			{
 				if(!lvs.getmonster(mi).checkdead())
 					lvs.getmonster(mi).attack(*p);
+
+				cout << "Player Health: " << p->gethp() << endl;
 				esound.play();
 			}
 			tprevattack = tcur;

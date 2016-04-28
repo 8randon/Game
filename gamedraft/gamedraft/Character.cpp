@@ -87,12 +87,14 @@ void Character::automove(Character *&player)
 
 void Character::attack(Character &enemy)
 {
-	
 	int dmg = 0;
 	if (isDistance_attack(distance(enemy)))
 	{
 		cout << "attacking" << endl;
-		enemy.set_hp(enemy.gethp() - this->str);
+
+		dmg = this->str - (this->str*(enemy.getarmor()/100));
+
+		enemy.set_hp(enemy.gethp() - dmg);
 	}
 }
 

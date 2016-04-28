@@ -24,7 +24,13 @@ public:
 	int getxpos() { return x; }
 	int getypos() { return y; }
 
-	bool checkdead() { if (hp == 0) this->isDead = true; return this->isDead; }
+	bool checkdead() 
+	{ 
+		if (this->hp <= 0) 
+			this->isDead = true; 
+	
+		return this->isDead; 
+	}
 
 	// Mutators - Added by Jensen Reitz
 	void set_mhp(const int new_mhp) { this->mhp = new_mhp; }

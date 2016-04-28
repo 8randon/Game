@@ -274,7 +274,7 @@ Player User::parsePlayerInfo(string const &str, size_t start)
 
 		try
 		{
-			newPlayer->addInventory(*new_item);
+			newPlayer->addInventory(new_item);
 		}
 		catch(const std::out_of_range &oor) //If there is no more room in the inventory
 		{
@@ -296,7 +296,7 @@ Player User::parsePlayerInfo(string const &str, size_t start)
 
 		try
 		{
-			newPlayer->addKeyItem(newKey);
+			newPlayer->addKeyItem(&newKey);
 		}
 		catch(const std::out_of_range &oor)
 		{

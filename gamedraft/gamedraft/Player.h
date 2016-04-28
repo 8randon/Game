@@ -14,8 +14,8 @@ public:
 		this->mgc = 0;
 
 		// Add default items
-		this->addInventory(*(new InventoryItem_Hold(2, 10,"Short Sword")));
-		this->addInventory(*(new InventoryItem_Hold(1, 10, "Leather Armor")));
+		this->addInventory(new InventoryItem_Hold(2, 10,"Short Sword"));
+		this->addInventory(new InventoryItem_Hold(1, 10, "Leather Armor"));
 
 		cout << "Player" << endl;
 	}
@@ -31,8 +31,8 @@ public:
 	string loadKeys();
 
 	//mutators
-	void addInventory(InventoryItem newItem);
-	void addKeyItem(KeyItem newKey);
+	bool addInventory(InventoryItem *newItem);
+	bool addKeyItem(KeyItem *newKey);
 
 	void levelup();
 
@@ -44,6 +44,6 @@ protected:
 
 private:
 	string password;
-	InventoryItem inventory[10];
-	KeyItem keypouch[5];
+	InventoryItem *inventory[10];
+	KeyItem *keypouch[5];
 };

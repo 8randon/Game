@@ -6,28 +6,27 @@ string Player::loadInventory()
 {
 	//String is stored in this configuraation: hold/consume (h/c), name, buff (int), modifier
 
-	int i = 0; //Counter variable for loops
 	string inventoryData;
-	InventoryItem *pCurr = this->inventory;
 
-	while((pCurr+i) && i<10)
+	for(int i=0; i<10; i++)
 	{
-		inventoryData += ",";
-
-		if(pCurr->get_type_item()=='h')
+		if(this->inventory[i])
 		{
-			inventoryData += "h" + ',' + (pCurr+i)->get_name();
-			inventoryData += "," + dynamic_cast<InventoryItem_Hold *>(pCurr+i)->get_buff();
-			inventoryData += "," + dynamic_cast<InventoryItem_Hold *>(pCurr+i)->get_modifier();
-		}
-		else if(pCurr->get_type_item()=='c')
-		{
-			inventoryData += "c" + ',' + (pCurr+i)->get_name();
-			inventoryData += "," + dynamic_cast<InventoryItem_Consume *>(pCurr+i)->get_buff();
-			inventoryData += "," + dynamic_cast<InventoryItem_Consume *>(pCurr+i)->get_modifier();
-		}
+			inventoryData += ",";
 
-		i++;
+			if(this->inventory[i]->get_type_item()=='h')
+			{
+				inventoryData += "h" + ',' + this->inventory[i]->get_name();
+				inventoryData += "," + dynamic_cast<InventoryItem_Hold *>(this->inventory[i])->get_buff();
+				inventoryData += "," + dynamic_cast<InventoryItem_Hold *>(this->inventory[i])->get_modifier();
+			}
+			else if(this->inventory[i]->get_type_item()=='c')
+			{
+				inventoryData += "c" + ',' + this->inventory[i]->get_name();
+				inventoryData += "," + dynamic_cast<InventoryItem_Consume *>(this->inventory[i])->get_buff();
+				inventoryData += "," + dynamic_cast<InventoryItem_Consume *>(this->inventory[i])->get_modifier();
+			}
+		}
 	}
 
 	return inventoryData;
@@ -39,47 +38,54 @@ string Player::loadKeys()
 {
 	//String is stored in the format: name, keyNumber
 
-	int i = 0; //Counter variable for loops
 	string keyData;
-	KeyItem *pCurr = this->keypouch;
 
 	keyData += ",*,"; //Sentinel character for the decryption to know when the KeyItems begin
 
-	while((pCurr+i) && i<5)
+	for(int i=0; i<5; i++)
 	{
-		keyData += "," + (pCurr+i)->get_name() + ",";
-		keyData += (pCurr+i)->get_keyNumber();
-
-		i++;
+		if(this->keypouch[i])
+		{
+			keyData += "," + this->keypouch[i]->get_name() + ",";
+			keyData += this->keypouch[i]->get_keyNumber();
+		}
 	}
 
 	return keyData;
 }
 
 //- Adds an ImventoryItem into the player's inventory
-//NOTE: This function is called within a try/catch block, so any pointer-out-of-bounds exception errors will be thrown and taken care of
+//- Returns true if the key is successfuly stored, false if there is no more room
 //Written by Jensen Reitz
-void Player::addInventory(InventoryItem newItem)
+bool Player::addInventory(InventoryItem *newItem)
 {
-	InventoryItem *pCurr = this->inventory;
+	for(int i=0; i<10; i++)
+	{
+		if(!(this->inventory[i]))
+		{
+			(this->inventory[i]) = newItem;
+			return true;
+		}
+	}
 
-	while(pCurr++) //Loop until the next inventory slot is open
-	{ }
-
-	*pCurr = newItem;
+	return false;
 }
 
 //- Adds a KeyItem into the player's keypouch
-//NOTE: This function is called within a try/catch block, so any pointer-out-of-bounds exception errors will be thrown and taken care of
+//- Returns true if the key is successfuly stored, false if there is no more room
 //Written by Jensen Reitz
-void Player::addKeyItem(KeyItem newKey)
+bool Player::addKeyItem(KeyItem *newKey)
 {
-	KeyItem *pCurr = this->keypouch;
+	for(int i=0; i<5; i++)
+	{
+		if(!(this->keypouch[i]))
+		{
+			(this->keypouch[i]) = newKey;
+			return true;
+		}
+	}
 
-	while(pCurr++)
-	{ }
-
-	*pCurr = newKey;
+	return false;
 }
 
 void Player::levelup()
@@ -128,8 +134,11 @@ void Player::attack(Character *&enemy)
 	int dmg = 0;
 	if (distance(*enemy))
 	{
-		while(enemy->gethp() != 0)
-			dmg = str - enemy->getstr();
+		if(enemy->gethp() != 0)
+		{
+			dmg = this->str - (this->str*(enemy->getarmor()/100));
+			
 			enemy->set_hp(enemy->gethp() - dmg);
+		}
 	}
 }
