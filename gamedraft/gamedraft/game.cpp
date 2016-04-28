@@ -57,6 +57,8 @@ void Game::GameLoop()
 {
 	sf::Event currentEvent;
 
+
+	EndCode exitCode = CONTINUE;
 	Character * pl = new Player();
 
 	//dynamic_cast<Player&>(*pl);
@@ -73,9 +75,16 @@ void Game::GameLoop()
 			//_mainWindow.clear(sf::Color(255, 0, 0));
 			//_mainWindow.display();
 
-			if(!pl->checkdead()) //Run level while the player is alive
-				runlv(levels[0], pl);
-			
+			switch(exitCode)
+			{
+			case CONTINUE: 
+				runlv(levels[0], pl, exitCode);
+				break;
+			case PLAYER_DEAD:
+				break;
+			case LEVEL_CLEARED:
+				break;
+			}
 
 			if (currentEvent.type == sf::Event::Closed)
 			{
@@ -93,7 +102,7 @@ void Game::loaddata(level lv[], int i)
 }
 
 
-void Game::runlv(level &lvs, Character *&p)
+void Game::runlv(level &lvs, Character *&p, EndCode &exitCode)
 {
 
 	sf::SoundBuffer buffer;
@@ -253,7 +262,7 @@ void Game::runlv(level &lvs, Character *&p)
 
 	i = 0;
 
-	while (window.isOpen() && !p->checkdead())
+	while (window.isOpen() && exitCode==CONTINUE)
 	{
 		sf::Event event;
 		while (window.pollEvent(event))
@@ -442,14 +451,34 @@ void Game::runlv(level &lvs, Character *&p)
 			}
 		}
 
+		//Check for exit exceptions to pass the exitCode back through
+		//Check for player death
+		if(p->checkdead())
+			exitCode = PLAYER_DEAD;
+
+		//Check for the level being cleared
+		//In this demo, the level is cleared when all the enemies are dead
+		int isDead = 0;
+
+		for(int j=0; j<lvs.getnummonsters(); j++)
+		{
+			if(lvs.getmonster(j).checkdead())
+				isDead++;
+		}
+
+		if(isDead==lvs.getnummonsters())
+			exitCode = LEVEL_CLEARED;
+
 		/*window.draw(wall1);
 		window.draw(wall2);
 		window.draw(spikes1);
 		window.draw(spikes2);*/
 		window.display();
+
+		//Delay for 1 second if the exit code is changed for visual purposes
+		if(exitCode!=CONTINUE)
+			_sleep(2000);
 	}
-
-
 }
 Game::GameState Game::_gameState = Uninitialized;
 sf::RenderWindow Game::_mainWindow;

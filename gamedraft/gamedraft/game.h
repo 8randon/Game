@@ -15,13 +15,19 @@ class Game
 {
 
 public:
+
+	typedef enum endCode
+	{
+		CONTINUE, LEVEL_CLEARED, PLAYER_DEAD
+	} EndCode;
+
 	static void Start();
 
 	//void setlv(level lv, int num) { lvs[num] = lv; }
 
 	static void loaddata(level lv[], int i);
 
-	static void runlv(level &lvs, Character *&p);
+	static void runlv(level &lvs, Character *&p, EndCode &exitCode);
 
 private:
 	static bool IsExiting();

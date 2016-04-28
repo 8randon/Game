@@ -1,0 +1,31 @@
+This is Crawl.
+
+In this project, that was intended to be a rpg-esque dungeon crawler, you must find your way through multiple levels of dungeon mazes while combating enemies that follow you
+wherever you go. They live here; they can climb walls, traverse pits; and they will stop at nothing to make sure you never come back to their home... or that your body never
+leaves...
+
+Our goals for this project:
+- Create an interactive dungeon crawler game that includes real-time combat and interaction with enemies and overworld objects.
+- The ability to traverse levels as you beat them, moving to the next stage; each will be more difficult than the last.
+- Implement a way to save player files, allowing them to come back later and pick up from where they left off.
+- Include multiple enemy types for a more diverse combat experience, including possibly having dungeon bosses.
+- And most importantly of all... Make it easy to add on to the game. Levels are read in from a text file, allowing users to write their own level and insert it into the 
+  project, obstacles, items, enemies, and all.
+
+What we accomplished:
+- A somewhat-interactive overworld experience. Combat with enemies is possible, but picking up/dropping items has not been implemented
+- Levels are easily created and read-in, but they take a while to properly design, so for now all we have is a "demo" level where enemies follow you around and you must
+  destroy all of them.
+- The profile saving works, but has not yet been properly added into the game, and a login screen has not been designed or programmed into the menu, so it could not be
+  included in this version
+- We originally had multiple enemy types, but we decided to only include one for the time being to simplify the demo experience. More will come, however, we assure you.
+
+This has been an awesome experience, and you bet that a few of us will still be working on this over the summer and beyond.
+
+You can follow our work at:
+<https://github.com/8randon/Game.git>
+
+Enjoy the demo for now!
+- Jensen Reitz
+- Brandon Townsend
+- Alex George

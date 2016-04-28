@@ -1,12 +1,14 @@
 ﻿  game.cpp
-c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(184): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(203): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(204): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(193): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(212): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(213): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(402): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(117): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(221): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(222): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(411): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(126): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\time.h(505): note: see declaration of 'localtime'
-c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(377): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(386): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\time.h(505): note: see declaration of 'localtime'
+c:\users\jensen\documents\sourcetree\game\gamedraft\gamedraft\game.cpp(480): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(1266): note: see declaration of '_sleep'
   gamedraft.vcxproj -> C:\Users\Jensen\Documents\SourceTree\Game\gamedraft\Debug\gamedraft.exe
